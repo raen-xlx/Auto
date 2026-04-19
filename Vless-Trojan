@@ -115,14 +115,14 @@ VL_URL=""
 if [[ "$PROTO_INPUT" == "1" || "$PROTO_INPUT" == "3" ]]; then
     HOST_TR="${TR_NAME}-${PROJECT_NUM}.${REGION}.run.app"
     deploy_service "Trojan" "$TR_NAME" "docker.io/n4pro/tr:latest"
-    TR_URL="trojan://Trojan-2025@firebase-settings.crashlytics.com:443?path=%2FN4&security=tls&type=ws&sni=${SNI}&host=${HOST_TR}#${TR_NAME}"
+    TR_URL="trojan://Trojan-2025@firebase-settings.crashlytics.com:443?path=%2FN4&security=tls&type=ws&sni=cares.paymaya.com&host=${HOST_TR}#${TR_NAME}"
 fi
 
 if [[ "$PROTO_INPUT" == "2" || "$PROTO_INPUT" == "3" ]]; then
     HOST_VL="${VL_NAME}-${PROJECT_NUM}.${REGION}.run.app"
     VLESS_UUID="0c890000-4733-b20e-067f-fc341bd20000"
     deploy_service "Vless" "$VL_NAME" "docker.io/n4pro/vl:latest"
-    VL_URL="vless://${VLESS_UUID}@firebase-settings.crashlytics.com:443?path=%2FN4&security=tls&encryption=none&host=${HOST_VL}&type=ws&sni=${SNI}#${VL_NAME}"
+    VL_URL="vless://${VLESS_UUID}@firebase-settings.crashlytics.com:443?path=%2FN4&security=tls&encryption=none&host=${HOST_VL}&type=ws&sni=cares.paymaya.com#${VL_NAME}"
 fi
 
 # --- Final Output ---
